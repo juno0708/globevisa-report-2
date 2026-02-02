@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025年度身份配置回顾</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+            color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
+
+        :root {
+            --primary: #BC002D;
+            --primary-light: #FFE5E5;
+            --gold: #D4AF37;
+            --gold-light: #F2E4CE;
+            --text: #2C3E50;
+            --bg: #FFFFFF;
+            --success: #2ECC71;
+            --accent: #5D4037;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Noto Sans SC", "PingFang SC", -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.4;
+            max-width: 1080px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1080px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .header {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-light), white);
+            border-radius: 12px;
+        }
+
+        .header h1 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header h2 {
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .welcome-section {
+            background: linear-gradient(135deg, #FFF9F0, white);
+            padding: 1rem;
+            border-radius: 12px;
+            border-left: 3px solid var(--gold);
+            font-size: 0.9rem;
+            margin-left: 0;
+        }
+
+        .config-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-left: 0;
+        }
+
+        .config-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .progress-section {
+            background: linear-gradient(135deg, var(--primary-light), white);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-left: 0;
+        }
+
+        .progress-number {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .milestone-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.8rem;
+            font-size: 0.85rem;
+            margin-left: 0;
+        }
+
+        .milestone-card {
+            background: white;
+            padding: 0.8rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .milestone-icon {
+            color: var(--success);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .feedback-container {
+            background: linear-gradient(135deg, var(--primary-light), white);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-left: 0;
+        }
+
+        .feedback-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0.8rem 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 0.5rem;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-top: 0;
+            margin-left: 0;
+        }
+
+        @media screen and (max-width: 1080px) {
+            body {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            .config-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="ri-fire-fill" style="font-size: 2rem; color: var(--primary);"></i>
+            <h1>2025 年度身份配置回顾</h1>
+            <h2>您的专属顾问：<span id="advisor"></span></h2>
+        </div>
+
+        <div class="welcome-section">
+            <p>尊敬的 <span id="client"></span>总：</p>
+            <p>2025 年，您已提前为自己与家人的未来完成关键布局，在身份与资产配置层面迈出了稳健而重要的一步。</p>
+            <p>截至目前，您的项目正严格按照既定进度稳步推进</p>
+        </div>
+
+        <div class="config-grid">
+            <div class="config-card">
+                <i class="ri-passport-fill" style="color: var(--gold);"></i>
+                <h3>身份配置</h3>
+                <p>希腊居留身份规划</p>
+            </div>
+            <div class="config-card">
+                <i class="ri-home-4-fill" style="color: var(--gold);"></i>
+                <h3>资产配置</h3>
+                <p><span id="property"></span> · <span id="unit"></span></p>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <h3>当前进度：<span id="currentProgress"></span></h3>
+            <div class="progress-number">身份配置完成度 <span id="completion"></span>%</div>
+        </div>
+
+        <div class="milestone-grid">
+            <div class="milestone-card">
+                <i class="ri-check-line milestone-icon"></i>
+                <div>
+                    <div><span id="transferStatus"></span><span id="transferDate"></span> | 房产到手</div>
+                </div>
+            </div>
+            <div class="milestone-card">
+                <i class="ri-check-line milestone-icon"></i>
+                <div>
+                    <div><span id="approvalStatus"></span><span id="approvalDate"></span> | 身份获批</div>
+                </div>
+            </div>
+            <div class="milestone-card">
+                <i class="ri-check-line milestone-icon"></i>
+                <div>
+                    <div><span id="cardStatus"></span><span id="cardDate"></span> | 成功拿卡</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feedback-container">
+            <p>感谢您在 2025 年与我们并肩同行。您的信任是我们最珍贵的动力。</p>
+            <p>这一路走来，不知道我们的服务是否让您觉得舒心？邀您点击填写反馈，您的满意体验是我们不敢懈怠的标准。</p>
+            <a href="https://doc.weixin.qq.com/smartsheet/form/1_wpkBrxCAAArgFTBJMNjQKViIGwCGEmiw_6d05cd" 
+               class="feedback-button" 
+               target="_blank">
+                <i class="ri-questionnaire-line"></i>
+                点击完成反馈
+            </a>
+            <p style="font-size: 0.8rem;">您的意见将直接用于后续服务优化</p>
+        </div>
+        <div class="footer">
+            <p>马年将至，愿您步履从容，行稳致远。所行皆有回响，所期终有所得</p>
+        </div>
+    </div>
+
+    <script>
+        function getURLParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                advisor: urlParams.get('advisor'),
+                client: urlParams.get('client'),
+                property: urlParams.get('property'),
+                unit: urlParams.get('unit'),
+                currentProgress: urlParams.get('currentProgress'),
+                completion: urlParams.get('completion'),
+                transferStatus: urlParams.get('transferStatus'),
+                transferDate: urlParams.get('transferDate'),
+                approvalStatus: urlParams.get('approvalStatus'),
+                approvalDate: urlParams.get('approvalDate'),
+                cardStatus: urlParams.get('cardStatus'),
+                cardDate: urlParams.get('cardDate')
+            };
+        }
+
+        function formatExcelDate(serialNumber) {
+            if (!serialNumber) return '';
+            const date = new Date((serialNumber - 25569) * 86400 * 1000);
+            return date.toLocaleDateString('zh-CN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
+        function populateContent() {
+            const params = getURLParameters();
+            
+            document.getElementById('advisor').textContent = params.advisor || '未指定';
+            document.getElementById('client').textContent = params.client || '尊敬的客户';
+            document.getElementById('property').textContent = params.property || '未指定';
+            document.getElementById('unit').textContent = params.unit || '';
+            document.getElementById('currentProgress').textContent = params.currentProgress || '进行中';
+            document.getElementById('completion').textContent = params.completion || '0';
+            
+            document.getElementById('transferStatus').textContent = params.transferStatus || '';
+            document.getElementById('transferDate').textContent = params.transferDate || '';
+            document.getElementById('approvalStatus').textContent = params.approvalStatus || '';
+            document.getElementById('approvalDate').textContent = params.approvalDate || '';
+            document.getElementById('cardStatus').textContent = params.cardStatus || '';
+            document.getElementById('cardDate').textContent = params.cardDate || '';
+        }
+
+        window.addEventListener('DOMContentLoaded', populateContent);
+    </script>
+</body>
+</html>
